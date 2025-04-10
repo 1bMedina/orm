@@ -26,7 +26,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'bmedina',
         'USER': 'bmedina',
-        'PASSWORD': os.getenv("PGPASSWORD"),
+        'PASSWORD': os.getenv("DBPASSWORD"),
         'HOST': 'mintcream.local',
         'PORT': '5432',
     }

@@ -53,7 +53,7 @@ class Stoves(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     climate = models.CharField(max_length=5, choices=CLIMATE_CHOICES)
     stove_location =  models.CharField(max_length=3, choices=LOCATION_CHOICES)
-    use = models.CharField(max_length=7, choices=USE_CHOICES)
+    use = models.CharField(max_length=7, choices=USE_CHOICES, db_index=True)
 
 def __str__(self):
     return f" {self.stove_url}|{self.dimensions}|{self.experience}|{self.price}|{self.climate}|{self.stove_location}|{self.use}"

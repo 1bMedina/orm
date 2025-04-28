@@ -80,7 +80,7 @@ class Reviews(models.Model):
     review_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     stove_id = models.ForeignKey(Stoves, on_delete=models.CASCADE)
-    rating = models.CharField(max_length=2, choices=RATING_CHOICES)
+    rating = models.CharField(max_length=30, choices=RATING_CHOICES)
     comment = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 

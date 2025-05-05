@@ -85,7 +85,7 @@ for _ in range(100):  # CHANGE THIS VALUE to test different table sizes
     stoves.save()
 
 with transaction.atomic():
-    Place.objects.bulk_create(places, batch_size=500)  # Adjust batch_size as needed
+    Stoves.objects.bulk_create(places, batch_size=500)  # Adjust batch_size as needed
 
 
 ####

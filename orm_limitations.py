@@ -22,7 +22,7 @@ from db.models import *
 #   This code is similar, but has some tweaks that make it way faster
 #
 ####
-myfake = Faker()
+fake = Faker()
 
 
 # Function to create random latitude and longitude within DC area

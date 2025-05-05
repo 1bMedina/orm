@@ -66,7 +66,12 @@ USE_CHOICES = [
         (HEATING, 'Heating'),
         (OTHER, 'Other'),
     ]
-
+def fake_dimensions(min_val=1.0, max_val=100.0, precision=2):
+    return {
+        'width': round(random.uniform(min_val,max_val), precision),
+        'height': round(random.uniform(min_val,max_val), precision),
+        'depth': round(random.uniform(min_val,max_val), precision)
+    }
 for _ in range(100):  # CHANGE THIS VALUE to test different table sizes
     stoves = Stoves(
         stove_url = fake.domain_name(),

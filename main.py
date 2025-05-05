@@ -85,12 +85,7 @@ USE_CHOICES = [
         (OTHER, 'Other'),
     ]
 
-def fake_dimensions(min_val=1.0, max_val=100.0, precision=2):
-    return {
-        'width': round(random.uniform(min_val,max_val), precision),
-        'height': round(random.uniform(min_val,max_val), precision),
-        'depth': round(random.uniform(min_val,max_val), precision)
-    }
+x
 
 for i in range(40):
     stoves = Stoves(

@@ -49,11 +49,11 @@ class Stoves(models.Model):
     #stove_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     stove_url = models.URLField()
     dimensions = models.CharField(max_length=255)
-    experience = models.CharField(max_length=8, choices=EXPERIENCE_CHOICES)
-    price = models.DecimalField(max_digits=6, decimal_places=2)
-    climate = models.CharField(max_length=5, choices=CLIMATE_CHOICES)
-    stove_location =  models.CharField(max_length=3, choices=LOCATION_CHOICES)
-    use = models.CharField(max_length=7, choices=USE_CHOICES)
+    experience = models.CharField(max_length=30, choices=EXPERIENCE_CHOICES)
+    price = models.DecimalField(max_digits=30, decimal_places=2)
+    climate = models.CharField(max_length=30, choices=CLIMATE_CHOICES)
+    stove_location =  models.CharField(max_length=30, choices=LOCATION_CHOICES)
+    use = models.CharField(max_length=30, choices=USE_CHOICES, db_index=True)
 
 def __str__(self):
     return f" {self.stove_url}|{self.dimensions}|{self.experience}|{self.price}|{self.climate}|{self.stove_location}|{self.use}"
@@ -80,7 +80,7 @@ class Reviews(models.Model):
     review_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     stove_id = models.ForeignKey(Stoves, on_delete=models.CASCADE)
-    rating = models.CharField(max_length=2, choices=RATING_CHOICES)
+    rating = models.CharField(max_length=30, choices=RATING_CHOICES)
     comment = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 

@@ -72,7 +72,7 @@ def fake_dimensions(min_val=1.0, max_val=100.0, precision=2):
         'height': round(random.uniform(min_val,max_val), precision),
         'depth': round(random.uniform(min_val,max_val), precision)
     }
-for _ in range(100):  # CHANGE THIS VALUE to test different table sizes
+for _ in range(1000):  # CHANGE THIS VALUE to test different table sizes
     stoves = Stoves(
         stove_url = fake.domain_name(),
          dimensions = fake_dimensions(), 
@@ -112,7 +112,7 @@ def test_query_iexact():
 exact_times = []
 iexact_times = []
 
-for _ in range(50):  # Change this value to change sample size
+for _ in range(100):  # Change this value to change sample size
     exact_times.append(test_query_exact())
     iexact_times.append(test_query_iexact())
 
